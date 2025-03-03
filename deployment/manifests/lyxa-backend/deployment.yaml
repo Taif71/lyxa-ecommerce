@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lyxa-backend
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lyxa-backend
+  template:
+    metadata:
+      labels:
+        app: lyxa-backend
+    spec:
+      containers:
+        - name: backend-container
+          image: taifdev/lyxa-backend:latest
+          ports:
+            - containerPort: 2312
+          env:
+            - name: NODE
+              valueFrom:
+                configMapKeyRef:
+                  name: lyxa-backend-configmap
+                  key: NODE            
+            - name: RUN_MIGRATIONS
+              valueFrom:
+                configMapKeyRef:
+                  name: lyxa-backend-configmap
+                  key: RUN_MIGRATIONS
+            - name: DB_CONNECTION
+              valueFrom:
+                configMapKeyRef:
+                  name: lyxa-backend-configmap
+                  key: DB_CONNECTION
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: lyxa-backend-configmap
+                  key: PORT
+            - name: SECRET_KEY_JWT
+              valueFrom:
+                secretKeyRef:
+                  name: lyxa-backend-secrets
+                  key: SECRET_KEY_JWT
+             
