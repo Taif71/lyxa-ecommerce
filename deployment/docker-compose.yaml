@@ -1,40 +1,40 @@
 version: "3.9"
 services:
-  # lyxa_backend:
-  #   image:  lyxa_backend_image
-  #   container_name: lyxa_backend_container
-  #   build:
-  #     context: ../
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - 2312:2312 
-  #   depends_on:
-  #     - mongodb    
-  #   environment:
-  #     - PORT=2312
-  #     - MODE=DEV
-  #     - NODE_ENV=development
-  #     - RUN_MIGRATIONS=true
-  #     - SECRET_KEY_JWT=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiU3VwZXIgQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IiQyYSQwOCQ3ZWhzMWtRWXU1YkZMRUtSUWw2Y0VlUURHMXVIcjZMWkVycWpPNFNMNGxaMmpSVDNpNC5kUyIsImV4cCI6MTYxNDcwOTQ5OCwiaWF0IjoxNjE0NzA5NDk4fQ.NBPiLlPHByxSpXZzGblYJ_rWGjvyGtRDUPViR34kFmI
-  #     - FE_HOST=http://localhost:3000
-  #     - DB_CONNECTION=mongodb://mongodb:27017/lyxadb
-  #     - GOOGLE_CLIENT_ID=
-  #     - GOOGLE_SECRET=
-  #     - OAUTH_GOOGLE_REDIRECT_URL=http://localhost:1223/user/google/login/redirect
-  #     - EMAIL_HOST=smtp.office365.com
-  #     - EMAIL_PORT=587
-  #     - EMAIL_AUTH_USER=
-  #     - EMAIL_AUTH_PASSWORD=
-  #     - AWS_REGION=us-west-2
-  #     - AWS_ACCESS_KEY_ID=
-  #     - AWS_SECRET_ACCESS_KEY=
-  #     - AWS_S3_BUCKET=ctr-imgs
-  #     - AWS_S3_BUCKET_FOLDER=imgs
-  #     - FILE_SPACE_PROVIDER=AWS_S3
-  #     - DO_FOLDER_NAME=test      
-  #   networks:
-  #     lyxa_network:
-  #       ipv4_address: 192.168.2.3  
+  lyxa_backend:
+    image:  lyxa_backend_image
+    container_name: lyxa_backend_container
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    ports:
+      - 2312:2312 
+    depends_on:
+      - mongodb    
+    environment:
+      - PORT=2312
+      - MODE=DEV
+      - NODE_ENV=development
+      - RUN_MIGRATIONS=true
+      - SECRET_KEY_JWT=eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiU3VwZXIgQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IiQyYSQwOCQ3ZWhzMWtRWXU1YkZMRUtSUWw2Y0VlUURHMXVIcjZMWkVycWpPNFNMNGxaMmpSVDNpNC5kUyIsImV4cCI6MTYxNDcwOTQ5OCwiaWF0IjoxNjE0NzA5NDk4fQ.NBPiLlPHByxSpXZzGblYJ_rWGjvyGtRDUPViR34kFmI
+      - FE_HOST=http://localhost:3000
+      - DB_CONNECTION=mongodb://mongodb:27017/lyxadb
+      - GOOGLE_CLIENT_ID=
+      - GOOGLE_SECRET=
+      - OAUTH_GOOGLE_REDIRECT_URL=http://localhost:1223/user/google/login/redirect
+      - EMAIL_HOST=smtp.office365.com
+      - EMAIL_PORT=587
+      - EMAIL_AUTH_USER=
+      - EMAIL_AUTH_PASSWORD=
+      - AWS_REGION=us-west-2
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
+      - AWS_S3_BUCKET=ctr-imgs
+      - AWS_S3_BUCKET_FOLDER=imgs
+      - FILE_SPACE_PROVIDER=AWS_S3
+      - DO_FOLDER_NAME=test      
+    networks:
+      lyxa_network:
+        ipv4_address: 192.168.2.3  
   
   mongodb:
     image: mongo:latest

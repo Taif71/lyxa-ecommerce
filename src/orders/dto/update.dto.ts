@@ -3,7 +3,10 @@ import { OrderDto } from './order.dto';
 import { IOrder } from '../interfaces';
 
 export class UpdateOrderDto
-    extends OmitType(OrderDto, [        
+    extends OmitType(OrderDto, [   
+        'isActive',
+        'timezone',
+        'isDeleted',     
         'cTime',
         'cBy',
         'uTime',

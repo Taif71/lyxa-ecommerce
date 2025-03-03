@@ -19,11 +19,11 @@ spec:
           ports:
             - containerPort: 2312
           env:
-            - name: NODE
+            - name: MODE
               valueFrom:
                 configMapKeyRef:
                   name: lyxa-backend-configmap
-                  key: NODE            
+                  key: MODE            
             - name: RUN_MIGRATIONS
               valueFrom:
                 configMapKeyRef:

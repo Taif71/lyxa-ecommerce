@@ -80,8 +80,8 @@ export class ProductsController {
   @UsePipes(new ValidationPipe(true))
   @UsePipes(new TrimPipe())
   @UseGuards(JwtAuthGuard)
-  @ApiConsumes('multipart/form-data')
-  @ApiBody({ type: ProductFileUploadDto })
+  // @ApiConsumes('multipart/form-data')
+  @ApiBody({ type: CreateProductDto })
   @UseInterceptors(
     FileFieldsInterceptor([
       { name: 'images', maxCount: 4 },

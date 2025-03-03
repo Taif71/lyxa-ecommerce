@@ -1,3 +1,8 @@
+project:
+    # @ make dev_ns
+	@ make mongodb
+	@ make lyxa_backend
+
 dev_ns:
 	@ kubectl apply -f ./deployment/manifests/common/dev-ns.yaml
 
