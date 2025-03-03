@@ -1,5 +1,4 @@
 project:
-    # @ make dev_ns
 	@ make mongodb
 	@ make lyxa_backend
 
